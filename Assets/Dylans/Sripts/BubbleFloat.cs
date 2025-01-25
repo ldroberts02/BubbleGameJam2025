@@ -29,7 +29,8 @@ public class BubbleFloat : MonoBehaviour
 
     }
 
-    public void Clicked(){
+    public void Clicked()
+    {
         OnClick.Invoke();
         Destroy(gameObject);
     }

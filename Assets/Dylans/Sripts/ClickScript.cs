@@ -1,33 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UIElements;
+using System.Runtime.CompilerServices;
 
-/*public class ClickScript : MonoBehaviour
-{
-    public Wallet wallet;
-
-    public int bubblesPerClick = 1;
-    private BubbleFloat bubbleFloat;
-    // Start is called before the first frame update
-    void Start()
-    {
-        wallet = GameObject.Find("WalletManager").GetComponent<Wallet>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0)){
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, Mathf.Infinity);
-         if (hit.collider !=null) {
-             hit.collider.gameObject.GetComponent<BubbleFloat>().Clicked();
-             wallet.AddBubbles(bubblesPerClick);
-            }
-        }
-    }
-}
-*/
 
 public class ClickScript : MonoBehaviour
 {
@@ -37,6 +14,10 @@ public class ClickScript : MonoBehaviour
     private AudioSource audioSource; // Reference to the AudioSource
     [Range(0.1f, 0.5f)] public float volumeChangeMult = 0.2f;
     public float pitchChangeMult = 0.2f;
+
+    private GameObject background;
+
+    private BubbleFloat currentBubble; // Store the clicked bubble for scaling back
 
     void Start()
     {
@@ -66,15 +47,32 @@ public class ClickScript : MonoBehaviour
                 BubbleFloat bubbleFloat = hit.collider.gameObject.GetComponent<BubbleFloat>();
                 if (bubbleFloat != null)
                 {
+
                     // Perform the bubble click action
                     bubbleFloat.Clicked();
                     wallet.AddBubbles(bubblesPerClick);
 
-                    // Play a random sound
+                    // Store the reference to scale back later
+                    //currentBubble = bubbleFloat;
+
+                    /*// Scale up the bubble and reset its scale after completion
+                    bubbleFloat.transform.DOBlendableScaleBy(bubbleFloat.transform.localScale * 1.05f, 0.05f).OnComplete(() =>
+                    {
+                        bubbleFloat.transform.DOBlendableScaleBy(bubbleFloat.transform.localScale / 1.05f, 0.05f);
+                    });*/
+
+                    background.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(BackgroundScaleBack);
+
+                    // Play a random sound of tha 10
                     PlayRandomSound();
                 }
             }
         }
+    }
+
+    private void BackgroundScaleBack()
+    {
+        background.transform.DOBlendableScaleBy(new Vector3(-0.05f, -0.05f, -0.05f), -0.05f);
     }
 
     void PlayRandomSound()
