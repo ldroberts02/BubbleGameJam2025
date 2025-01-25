@@ -9,7 +9,7 @@ public class Wallet : MonoBehaviour
     public UnityEvent notEnoughMoney;
 
     public int bubbles;
-    static Wallet instance;
+    public static Wallet instance;
    
     void Awake(){
         LoadPrefs();
