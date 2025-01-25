@@ -17,7 +17,7 @@ public class Upgrades : MonoBehaviour
     }
     public void onPurchase(int id = -1)
     {
-        switch(id)
+        switch(id) //what to do for each purchase, call the function alongside the number of the upgrade
         {
             case 0:
             //upgrade type 1 - 
