@@ -66,7 +66,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 0 - Upgrade 1");
                 if (upgradePriceOne < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceOne);
+                    Wallet.instance.SubBubbles(upgradePriceOne);
                     if (upgradeOne.activeSelf == false)
                     {
                         upgradeOne.SetActive(true);
@@ -80,7 +80,7 @@ public class Upgrades : MonoBehaviour
                         upgradePriceOne = Mathf.Round(upgradePriceOne);
                         upgradeOneAmnt++;
                     }
-                    upgradeOnePriceText.text = ((int)upgradePriceOne).ToString();
+                    upgradeOnePriceText.text = (upgradePriceOne).ToString();
                 }
                 break;
             case 1:
@@ -88,7 +88,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 1 - Upgrade 2");
                 if (upgradePriceTwo < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceTwo);
+                    Wallet.instance.SubBubbles(upgradePriceTwo);
                     if (upgradeTwo.activeSelf == false)
                     {
                         upgradeTwo.SetActive(true);
@@ -102,7 +102,7 @@ public class Upgrades : MonoBehaviour
                         upgradePriceTwo = Mathf.Round(upgradePriceTwo);
                         upgradeTwoAmnt++;
                     }
-                    upgradeTwoPriceText.text = ((int)upgradePriceTwo).ToString();
+                    upgradeTwoPriceText.text = (upgradePriceTwo).ToString();
                 }
                 break;
             case 2:
@@ -110,7 +110,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 2 - Upgrade 3");
                 if (upgradePriceThree < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceThree);
+                    Wallet.instance.SubBubbles(upgradePriceThree);
                     if (upgradeThree.activeSelf == false)
                     {
                         upgradeThree.SetActive(true);
@@ -124,7 +124,7 @@ public class Upgrades : MonoBehaviour
                         upgradePriceThree = Mathf.Round(upgradePriceThree);
                         upgradeThreeAmnt++;
                     }
-                    upgradeThreePriceText.text = ((int)upgradePriceThree).ToString();
+                    upgradeThreePriceText.text = (upgradePriceThree).ToString();
                 }
                 break;
             case 3:
@@ -132,7 +132,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 3 - Upgrade 4");
                 if (upgradePriceFour < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceFour);
+                    Wallet.instance.SubBubbles(upgradePriceFour);
                     if (upgradeFour.activeSelf == false)
                     {
                         upgradeFour.SetActive(true);
@@ -146,7 +146,7 @@ public class Upgrades : MonoBehaviour
                         upgradePriceFour = Mathf.Round(upgradePriceFour);
                         upgradeFourAmnt++;
                     }
-                    upgradeFourPriceText.text = ((int)upgradePriceFour).ToString();
+                    upgradeFourPriceText.text = (upgradePriceFour).ToString();
                 }
                 break;
             case 4:
@@ -154,21 +154,23 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 4 - Upgrade 5");
                 if (upgradePriceFive < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceFive);
+                    Wallet.instance.SubBubbles(upgradePriceFive);
                     if (upgradeFive.activeSelf == false)
                     {
                         upgradeFive.SetActive(true);
                         upgradePriceFive *= 1.2f;
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
+                        
                     }
                     if (upgradeFive.activeSelf == true)
                     {
                         upgradePriceFive *= 1.2f;
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
+                        upgradeFive.GetComponent<AutoClicker>().UpgradeClicker();
                     }
-                    upgradeFivePriceText.text = ((int)upgradePriceFive).ToString();
+                    upgradeFivePriceText.text = (upgradePriceFive).ToString();
                 }
                 break;
             case 5:
@@ -176,7 +178,7 @@ public class Upgrades : MonoBehaviour
             Debug.Log("Case 5 - Upgrade 6");
                 if (upgradePriceSix < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceSix);
+                    Wallet.instance.SubBubbles(upgradePriceSix);
                     if (upgradeSix.activeSelf == false)
                     {
                         upgradeSix.SetActive(true);
@@ -189,8 +191,9 @@ public class Upgrades : MonoBehaviour
                         upgradePriceSix *= 1.2f;
                         upgradePriceSix = Mathf.Round(upgradePriceSix);
                         upgradeSixAmnt++;
+                        upgradeSix.GetComponent<AutoClicker>().UpgradeClicker();
                     }
-                    upgradeSixPriceText.text = ((int)upgradePriceSix).ToString();
+                    upgradeSixPriceText.text = (upgradePriceSix).ToString();
                 }
                 break;
             case 6:
@@ -198,7 +201,7 @@ public class Upgrades : MonoBehaviour
             Debug.Log("Case 6 - Upgrade 7");
                 if (upgradePriceSeven < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceSeven);
+                    Wallet.instance.SubBubbles(upgradePriceSeven);
                     if (upgradeSeven.activeSelf == false)
                     {
                         upgradeSeven.SetActive(true);
@@ -211,8 +214,9 @@ public class Upgrades : MonoBehaviour
                         upgradePriceSeven *= 1.2f;
                         upgradePriceSeven = Mathf.Round(upgradePriceSeven);
                         upgradeSevenAmnt++;
+                        upgradeSeven.GetComponent<AutoClicker>().UpgradeClicker();
                     }
-                    upgradeSevenPriceText.text = ((int)upgradePriceSeven).ToString();
+                    upgradeSevenPriceText.text = (upgradePriceSeven).ToString();
                 }
                 break;
             case 7:
@@ -220,7 +224,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 7 - Upgrade 8");
                 if (upgradePriceEight < Wallet.instance.bubbles)
                 {
-                    Wallet.instance.SubBubbles((int)upgradePriceEight);
+                    Wallet.instance.SubBubbles(upgradePriceEight);
                     if (upgradeEight.activeSelf == false)
                     {
                         upgradeEight.SetActive(true);
@@ -233,8 +237,9 @@ public class Upgrades : MonoBehaviour
                         upgradePriceEight *= 1.2f;
                         upgradePriceEight = Mathf.Round(upgradePriceEight);
                         upgradeEightAmnt++;
+                        upgradeEight.GetComponent<AutoClicker>().UpgradeClicker();
                     }
-                    upgradeEightPriceText.text = ((int)upgradePriceEight).ToString();
+                    upgradeEightPriceText.text = (upgradePriceEight).ToString();
                 }
                 break;
             default:

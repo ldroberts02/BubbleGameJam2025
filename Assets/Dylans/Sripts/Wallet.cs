@@ -8,7 +8,7 @@ public class Wallet : MonoBehaviour
 
     public UnityEvent notEnoughMoney;
 
-    public int bubbles;
+    public float bubbles;
     public static Wallet instance;
    
     void Awake(){
@@ -21,12 +21,12 @@ public class Wallet : MonoBehaviour
             Destroy(this);
         }
     }
-    public void AddBubbles(int _popped){
+    public void AddBubbles(float _popped){
         bubbles += _popped;
         SavePrefs();
     }
 
-    public void SubBubbles(int _sub){
+    public void SubBubbles(float _sub){
 
         if(bubbles - _sub <0 ){
             notEnoughMoney.Invoke();
@@ -40,13 +40,13 @@ public class Wallet : MonoBehaviour
 
     public void SavePrefs()
     {
-        PlayerPrefs.SetInt("BubblesPopped", bubbles);
+        PlayerPrefs.SetFloat("BubblesPopped", bubbles);
         PlayerPrefs.Save();
     }
  
     public void LoadPrefs()
     {
-        bubbles = PlayerPrefs.GetInt("BubblesPopped", 0); 
+        bubbles = PlayerPrefs.GetFloat("BubblesPopped", 0); 
     }
 
 }
