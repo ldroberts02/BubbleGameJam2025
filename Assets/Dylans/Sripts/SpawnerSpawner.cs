@@ -11,6 +11,7 @@ public class SpawnerSpawner : MonoBehaviour
     public List<Transform> bubbleSpawnerPos;
     public GameObject prefab;
     public int numOfSpawner = 1;
+    public float spawnRateModifier;
     public int currentSpawner= 0;
 
 
