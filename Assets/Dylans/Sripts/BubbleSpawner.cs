@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class BubbleSpawner : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class BubbleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        spawnRate = Random.Range(0.1f*spawner.spawnRateModifier, 0.75f*spawner.spawnRateModifier);
+        spawner = transform.parent.gameObject.transform.parent.gameObject.GetComponent<SpawnerSpawner>();
+        spawnRate = Random.Range(0.1f/spawner.spawnRateModifier, 0.75f/spawner.spawnRateModifier);
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class BubbleSpawner : MonoBehaviour
         if(currentTime >spawnRate){
             Instantiate(bubble,transform);
             currentTime = 0;
-             spawnRate = Random.Range(0.2f*spawner.spawnRateModifier, 0.75f*spawner.spawnRateModifier);
+            spawnRate = Random.Range(0.5f/spawner.spawnRateModifier, 0.75f/spawner.spawnRateModifier);
         }
     }
 }
