@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class SpawnerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //SaveData Comment Out when testing
+       // numOfSpawner = PlayerPrefs.GetInt("numOfSpawner", 1);
+
        for(;    numOfSpawner > currentSpawner; currentSpawner++){
         Instantiate(prefab, bubbleSpawnerPos[currentSpawner]);
        }
@@ -26,7 +30,18 @@ public class SpawnerSpawner : MonoBehaviour
         if (bubbleSpawnerPos.Count >= numOfSpawner){
             Instantiate(prefab, bubbleSpawnerPos[numOfSpawner]);
             numOfSpawner +=1;
+            Save();
         }
         
     }
+
+    void Save(){
+        PlayerPrefs.SetInt("numOfSpawner", numOfSpawner);
+    }
+    void Reset(){
+        PlayerPrefs.SetInt("numOfSpawner", 1);
+    }
+
+
+
 }
