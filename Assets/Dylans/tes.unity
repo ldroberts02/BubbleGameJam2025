@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33637097b04b16f448c04c8b14972d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallet: {fileID: 0}
+  bubblesPerClick: 1
 --- !u!4 &305873026
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +308,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1491907450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491907452}
+  - component: {fileID: 1491907451}
+  m_Layer: 0
+  m_Name: WalletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1491907451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491907450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00523f126a63ad44f944242b84518998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notEnoughMoney:
+    m_PersistentCalls:
+      m_Calls: []
+  bubbles: 0
+--- !u!4 &1491907452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491907450}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17404896, y: 5.7731996, z: 0.2297271}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1105287989708911726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,3 +429,4 @@ SceneRoots:
   - {fileID: 1105287989708911726}
   - {fileID: 1071100461}
   - {fileID: 305873026}
+  - {fileID: 1491907452}

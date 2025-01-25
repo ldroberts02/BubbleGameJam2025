@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Wallet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public UnityEvent notEnoughMoney;
+
+    public int bubbles = 0;
+
+   
+
+    public void AddBubbles(int _popped){
+        bubbles += _popped;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SubBubbles(int _sub){
+
+        if(bubbles - _sub <0 ){
+            notEnoughMoney.Invoke();
+        }
+        else{
+            bubbles -= _sub;
+        }
+
     }
 }
