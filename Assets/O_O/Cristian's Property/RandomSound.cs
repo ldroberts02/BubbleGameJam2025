@@ -30,7 +30,8 @@ using UnityEngine;
 }
 */
 
-public class RandomSound : MonoBehaviour
+
+public class ClickBubbleSound : MonoBehaviour
 {
     public AudioClip[] sounds;
     private AudioSource source;
@@ -60,7 +61,7 @@ public class RandomSound : MonoBehaviour
 
     void PlayRandomSound()
     {
-        // Pick a random sound and modify pitch/volume
+        // Play a random sound with pitch and volume variations
         if (sounds.Length > 0)
         {
             source.clip = sounds[Random.Range(0, sounds.Length)];
