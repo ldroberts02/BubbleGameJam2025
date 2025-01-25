@@ -61,7 +61,7 @@ public class ClickScript : MonoBehaviour
                         bubbleFloat.transform.DOBlendableScaleBy(bubbleFloat.transform.localScale / 1.05f, 0.05f);
                     });*/
 
-                    background.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(BackgroundScaleBack);
+                    //background.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(BackgroundScaleBack);
 
                     // Play a random sound of tha 10
                     PlayRandomSound();
@@ -89,4 +89,6 @@ public class ClickScript : MonoBehaviour
             Debug.LogWarning("No sounds assigned in the array!");
         }
     }
+
+    
 }

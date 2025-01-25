@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5196661330481733297}
   - component: {fileID: 1316438417900916727}
+  - component: {fileID: 4931947896340464193}
   m_Layer: 0
   m_Name: Clicker
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948787167907290271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33637097b04b16f448c04c8b14972d52, type: 3}
   m_Name: 
@@ -58,3 +59,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b98e45dd8ca9bb4ca58946c63fb657b, type: 3}
   volumeChangeMult: 0.2
   pitchChangeMult: 0.2
+--- !u!114 &4931947896340464193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948787167907290271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787c08b20613ec24892f0d0242f304ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallet: {fileID: 0}
+  bubblesPerClick: 1
+  sounds: []
+  volumeChangeMult: 0.2
+  pitchChangeMult: 0.2
+  bubbleClickPrefab: {fileID: 7925616433811809618, guid: af6b32c6c851b1f428d55ca9b34620fe, type: 3}
+  maxRadius: 1.1
