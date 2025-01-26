@@ -28,6 +28,7 @@ public class Upgrades : MonoBehaviour
     public float upgradePriceFour = 10000.0f;
     public int upgradeFourAmnt = 0;
     public TMP_Text upgradeFourPriceText;
+    public SpawnerSpawner spawner;
 
     public GameObject upgradeFive;
     public float upgradePriceFive = 50.0f;
@@ -54,7 +55,7 @@ public class Upgrades : MonoBehaviour
 
     void Start()
     {
-
+        spawner = GameObject.Find("BubbleSpawnManager").GetComponent<SpawnerSpawner>();
     }
 
     // Update is called once per frame
@@ -157,7 +158,9 @@ public class Upgrades : MonoBehaviour
                         upgradePriceFour *= 1.2f;
                         upgradePriceFour = Mathf.Round(upgradePriceFour);
                         upgradeFourAmnt++;
+
                     }
+                    spawner.spawnRateModifier += 0.1f;
                     upgradeFourPriceText.text = (upgradePriceFour).ToString();
                 }
                 break;
