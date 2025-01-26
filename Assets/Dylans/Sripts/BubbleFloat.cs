@@ -62,6 +62,10 @@ public class BubbleFloat : MonoBehaviour
     public GameObject PopupTextPrefab; // Reference to the popup text prefab
     public Canvas PopupCanvas; // Reference to the canvas for popup text
 
+    private float t = 0;
+    private bool setDirection = false;
+    private float directionfloat = 0;
+
     void Start()
     {
         if (PopupCanvas == null)
@@ -77,12 +81,20 @@ public class BubbleFloat : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Smooth floating movement
-        transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x + Random.Range(-0.1f, 0.1f), -5f, 5f),
-            transform.position.y + 0.05f,
-            transform.position.z
-        );
+          t += Time.deltaTime;
+         if(!setDirection){
+            directionfloat = Random.Range(-0.1f, 0.1f);
+            setDirection = true;
+         }
+
+         if(setDirection){
+             transform.position = new Vector3(Mathf.Clamp(Mathf.Lerp(transform.position.x,transform.position.x+directionfloat, t/1 ),-5f,5f), transform.position.y, transform.position.z);
+         }  
+
+         if(t>1){
+            setDirection = false;
+            t = 0f;
+         }
 
         // Destroy if bubble moves off-screen
         if (transform.position.y > 20)
