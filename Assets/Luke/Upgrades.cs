@@ -91,6 +91,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 1 - Upgrade 2");
                 if (upgradePriceTwo < Wallet.instance.bubbles)
                 {
+                    clickerObject.GetComponent<NewClickScript>().maxRadius *= 1.09f;
                     Wallet.instance.SubBubbles(upgradePriceTwo);
                     if (upgradeTwo.activeSelf == false)
                     {
