@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4044d4ccc7fbce46a27e07e6acb149b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 7925616433811809618, guid: 0d0934765510d19438223ea2e0f51c1f, type: 3}
+  bubble: {fileID: 7925616433811809618, guid: df5929cdf5df53349888297e605828c5, type: 3}
   spawner: {fileID: 0}
   spawnRate: 1
   currentTime: 0
