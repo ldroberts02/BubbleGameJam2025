@@ -11,7 +11,8 @@ public class Wallet : MonoBehaviour
     public float bubbles;
     public static Wallet instance;
    
-    void Awake(){
+    void Awake()
+    {
         LoadPrefs();
         if( instance == null){
             DontDestroyOnLoad(this);
@@ -21,7 +22,8 @@ public class Wallet : MonoBehaviour
             Destroy(this);
         }
     }
-    public void AddBubbles(float _popped){
+    public void AddBubbles(float _popped)
+    {
         bubbles += _popped;
         SavePrefs();
     }
@@ -50,3 +52,59 @@ public class Wallet : MonoBehaviour
     }
 
 }
+
+/*
+public class Wallet : MonoBehaviour
+{
+    public UnityEvent notEnoughMoney;
+
+    public float bubbles;
+    public static Wallet instance;
+
+    void Awake()
+    {
+        LoadPrefs();
+        if (instance == null)
+        {
+            DontDestroyOnLoad(this);
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public void AddBubbles(float _popped)
+    {
+        bubbles += _popped;
+        SavePrefs();
+    }
+
+    public bool SubBubbles(float _sub)
+    {
+        if (bubbles >= _sub)
+        {
+            bubbles -= _sub;
+            SavePrefs();
+            return true; // Deduction successful
+        }
+        else
+        {
+            notEnoughMoney.Invoke(); // Trigger event if insufficient funds
+            return false; // Deduction failed
+        }
+    }
+
+    public void SavePrefs()
+    {
+        PlayerPrefs.SetFloat("BubblesPopped", bubbles);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadPrefs()
+    {
+        bubbles = PlayerPrefs.GetFloat("BubblesPopped", 0);
+    }
+}
+*/

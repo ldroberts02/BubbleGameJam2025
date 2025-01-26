@@ -188,6 +188,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02e2eb6628504047926f7de061c1619, type: 3}
+--- !u!1 &425729781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 713515255187598903, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &425729786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425729781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949742dbdbee41a42bcc8e12ed85c6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newClickScript: {fileID: 1437594909}
+  upgradeCost: 10
 --- !u!1 &478512481
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +352,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+      propertyPath: wallet
+      value: 
+      objectReference: {fileID: 1491907451}
+    - target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+      propertyPath: maxRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+      propertyPath: popupCanvas
+      value: 
+      objectReference: {fileID: 770852688}
+    - target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+      propertyPath: upgradeButton
+      value: 
+      objectReference: {fileID: 1617912659}
+    - target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+      propertyPath: popupTextPrefab
+      value: 
+      objectReference: {fileID: 5744493230484564485, guid: d9d9c7a8550f84b4889275d4a72437c3, type: 3}
     - target: {fileID: 5196661330481733297, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.17404896
@@ -473,6 +512,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1568814145208884465, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: m_text
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568814145208884465, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: m_fontSize
+      value: 34.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2678690697720765857, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -564,8 +611,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 713515255187598903, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 425729786}
   m_SourcePrefab: {fileID: 100100000, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+--- !u!223 &770852688 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 277983558364452503, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1437594909 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
@@ -625,6 +680,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617912659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5320268305588509850, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740432967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4566330050403406301, guid: e417d1ba516b0d44bb24912abf365115, type: 3}
