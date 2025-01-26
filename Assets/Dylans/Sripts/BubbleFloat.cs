@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+/*
 public class BubbleFloat : MonoBehaviour
 {
 
@@ -22,7 +23,8 @@ public class BubbleFloat : MonoBehaviour
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x + Random.Range(-.2f, .2f),-5f,5f), transform.position.y +0.1f, transform.position.z);
 
-        if(transform.position.y > 20){
+        if(transform.position.y > 20)
+        {
             Destroy(gameObject);
         }
 
@@ -37,3 +39,48 @@ public class BubbleFloat : MonoBehaviour
 
     
 }
+*/
+public class BubbleFloat : MonoBehaviour
+{
+    public UnityEvent OnClick; // Event to trigger on bubble click
+    public GameObject PopupTextPrefab; // Reference to the popup text prefab
+    public Canvas PopupCanvas; // Reference to the canvas for popup text
+
+    void Start()
+    {
+        if (PopupCanvas == null)
+        {
+            // Automatically find a Canvas in the scene if not assigned
+            PopupCanvas = FindObjectOfType<Canvas>();
+            if (PopupCanvas == null)
+            {
+                Debug.LogError("No Canvas found in the scene for PopupText!");
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Smooth floating movement
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x + Random.Range(-0.1f, 0.1f), -5f, 5f),
+            transform.position.y + 0.05f,
+            transform.position.z
+        );
+
+        // Destroy if bubble moves off-screen
+        if (transform.position.y > 20)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Clicked()
+    {
+        OnClick.Invoke(); // Trigger any additional functionality
+        Destroy(gameObject); // Destroy the bubble
+    }
+}
+
+
+

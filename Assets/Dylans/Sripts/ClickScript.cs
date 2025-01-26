@@ -5,7 +5,6 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using System.Runtime.CompilerServices;
 
-
 public class ClickScript : MonoBehaviour
 {
     public Wallet wallet; // Reference to WalletManager
@@ -15,14 +14,19 @@ public class ClickScript : MonoBehaviour
     [Range(0.1f, 0.5f)] public float volumeChangeMult = 0.2f;
     public float pitchChangeMult = 0.2f;
 
-    private GameObject background;
-
-    private BubbleFloat currentBubble; // Store the clicked bubble for scaling back
+    public GameObject background; // Reference to background object
 
     void Start()
     {
         // Get the WalletManager reference
-        wallet = GameObject.Find("WalletManager").GetComponent<Wallet>();
+        if (wallet == null)
+        {
+            wallet = GameObject.Find("WalletManager")?.GetComponent<Wallet>();
+            if (wallet == null)
+            {
+                Debug.LogError("WalletManager not found in the scene!");
+            }
+        }
 
         // Add an AudioSource component if one isn't already attached
         audioSource = GetComponent<AudioSource>();
@@ -47,46 +51,41 @@ public class ClickScript : MonoBehaviour
                 BubbleFloat bubbleFloat = hit.collider.gameObject.GetComponent<BubbleFloat>();
                 if (bubbleFloat != null)
                 {
-
                     // Perform the bubble click action
                     bubbleFloat.Clicked();
-                    wallet.AddBubbles(bubblesPerClick);
+                    wallet?.AddBubbles(bubblesPerClick);
 
-                    // Store the reference to scale back later
-                    //currentBubble = bubbleFloat;
+                    // Show popup text
+                    PopUpText.Create(bubblesPerClick, bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas);
 
-                    /*// Scale up the bubble and reset its scale after completion
-                    bubbleFloat.transform.DOBlendableScaleBy(bubbleFloat.transform.localScale * 1.05f, 0.05f).OnComplete(() =>
+                    // Scale the background if assigned
+                    if (background != null)
                     {
-                        bubbleFloat.transform.DOBlendableScaleBy(bubbleFloat.transform.localScale / 1.05f, 0.05f);
-                    });*/
+                        background.transform
+                            .DOScale(background.transform.localScale * 1.05f, 0.05f)
+                            .OnComplete(() =>
+                                background.transform.DOScale(background.transform.localScale / 1.05f, 0.05f));
+                    }
 
-                    background.transform.DOBlendableScaleBy(new Vector3(0.05f, 0.05f, 0.05f), 0.05f).OnComplete(BackgroundScaleBack);
-
-                    // Play a random sound of tha 10
+                    // Play a random sound
                     PlayRandomSound();
                 }
             }
         }
     }
 
-    private void BackgroundScaleBack()
-    {
-        background.transform.DOBlendableScaleBy(new Vector3(-0.05f, -0.05f, -0.05f), -0.05f);
-    }
-
     void PlayRandomSound()
     {
-        if (sounds.Length > 0)
+        if (sounds.Length > 0 && audioSource != null)
         {
-            audioSource.clip = sounds[Random.Range(0, sounds.Length)];
+            AudioClip randomClip = sounds[Random.Range(0, sounds.Length)];
             audioSource.pitch = Random.Range(1 - pitchChangeMult, 1 + pitchChangeMult);
             audioSource.volume = Random.Range(1 - volumeChangeMult, 1);
-            audioSource.PlayOneShot(audioSource.clip);
+            audioSource.PlayOneShot(randomClip);
         }
-        else
+        else if (sounds.Length == 0)
         {
-            Debug.LogWarning("No sounds assigned in the array!");
+            Debug.LogWarning("No sounds assigned in the sounds array!");
         }
     }
 }
