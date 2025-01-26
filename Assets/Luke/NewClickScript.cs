@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using DG.Tweening;
 
 /*public class ClickScript : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class NewClickScript : MonoBehaviour
     public float pitchChangeMult = 0.2f;
     public GameObject bubbleClickPrefab;
     public float maxRadius = 10.1f;
+    public GameObject background; // Reference to background object
 
     void Start()
     {
@@ -72,12 +74,27 @@ public class NewClickScript : MonoBehaviour
                 BubbleFloat bubbleFloat = hit.collider.gameObject.GetComponent<BubbleFloat>();
                 if (bubbleFloat != null)
                 {
+                    
+                    
+                     // Show popup text
+                    PopUpText.Create(bubblesPerClick, bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas);
+
+                    
                     // Perform the bubble click action
                     bubbleFloat.Clicked();
                     wallet.AddBubbles(bubblesPerClick);
 
                     // Play a random sound
                     PlayRandomSound();
+
+                    // Scale the background if assigned
+                    if (background != null)
+                    {
+                        background.transform
+                            .DOScale(background.transform.localScale * 1.05f, 0.05f)
+                            .OnComplete(() =>
+                                background.transform.DOScale(background.transform.localScale / 1.05f, 0.05f));
+                    }
                 }
             }
         }
@@ -100,10 +117,12 @@ public class NewClickScript : MonoBehaviour
 
 
 
-    public void ClickBubbleAdd(){
+    public void ClickBubbleAdd()
+    {
         wallet.AddBubbles(bubblesPerClick);
     }
-        public void RadiusUpgrad(){
+    public void RadiusUpgrade()
+    {
         maxRadius = maxRadius * 1.2f;
     }
 }
