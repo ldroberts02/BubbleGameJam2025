@@ -3849,8 +3849,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bubble Clicker\nMade for Game Jam 2025 \nName 1\nName 2\nName 3\nName
-    4\nName 5\nName 6"
+  m_text: "Bubble Clicker\nMade for Global Game Jam 2025 \nElizabeth Beck\nCarson
+    Burnham\nDylan Hillard\nCristian Nalls\nDavid Peralta\nLuke Roberts\nColton Ward"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3981d9aac1af98b4dbb7aa49c83bf7ae, type: 2}
   m_sharedMaterial: {fileID: -1527103560732194302, guid: 3981d9aac1af98b4dbb7aa49c83bf7ae, type: 2}
@@ -3877,7 +3877,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.4
+  m_fontSize: 39.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
