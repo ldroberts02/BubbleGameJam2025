@@ -16,6 +16,12 @@ public class testScript : MonoBehaviour
         
     }
 
+    void doExitGame() 
+    { 
+        Application.Quit();
+        Debug.Log("among us");
+    }
+
     // Update is called once per frame
     void Update()
     {
