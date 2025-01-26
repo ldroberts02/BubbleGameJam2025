@@ -76,6 +76,7 @@ public class Upgrades : MonoBehaviour
                     if (upgradeOne.activeSelf == false)
                     {
                         upgradeOne.SetActive(true);
+                        tringale[0].SetActive(true);
                         upgradePriceOne *= 1.2f;
                         upgradePriceOne = Mathf.Round(upgradePriceOne);
                         upgradeOneAmnt++;
@@ -85,6 +86,10 @@ public class Upgrades : MonoBehaviour
                         upgradePriceOne *= 1.2f;
                         upgradePriceOne = Mathf.Round(upgradePriceOne);
                         upgradeOneAmnt++;
+                        if (tringale.Count > upgradeOneAmnt)
+                        {
+                            tringale[upgradeOneAmnt - 1].SetActive(true);
+                        }
                     }
                     upgradeOnePriceText.text = (upgradePriceOne).ToString();
                 }
@@ -166,7 +171,6 @@ public class Upgrades : MonoBehaviour
                     if (upgradeFive.activeSelf == false)
                     {
                         upgradeFive.SetActive(true);
-                        tringale[0].SetActive(true);
                         upgradePriceFive *= 1.2f;
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
@@ -177,11 +181,7 @@ public class Upgrades : MonoBehaviour
                         upgradePriceFive *= 1.2f;
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
-                        upgradeFive.GetComponent<AutoClicker>().UpgradeClicker();
-                        if (tringale.Count > upgradeOneAmnt)
-                        {
-                            tringale[upgradeFiveAmnt - 1].SetActive(true);
-                        }
+                        upgradeFive.GetComponent<AutoClicker>().UpgradeClicker();                        
                     }
                     upgradeFivePriceText.text = (upgradePriceFive).ToString();
                 }

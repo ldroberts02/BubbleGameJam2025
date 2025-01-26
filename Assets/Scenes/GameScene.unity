@@ -188,6 +188,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02e2eb6628504047926f7de061c1619, type: 3}
+--- !u!1 &214013717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4086012767776243389, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &297003408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3862755292148626781, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &393731635
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +596,22 @@ PrefabInstance:
       propertyPath: clickerObject
       value: 
       objectReference: {fileID: 1491293430}
+    - target: {fileID: 4388841498595048191, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: tringale.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388841498595048191, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: tringale.Array.data[0]
+      value: 
+      objectReference: {fileID: 297003408}
+    - target: {fileID: 4388841498595048191, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: tringale.Array.data[1]
+      value: 
+      objectReference: {fileID: 924203448}
+    - target: {fileID: 4388841498595048191, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: tringale.Array.data[2]
+      value: 
+      objectReference: {fileID: 214013717}
     - target: {fileID: 5517677936228991546, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -679,6 +705,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+--- !u!1 &924203448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 596430709432890643, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+  m_PrefabInstance: {fileID: 706074430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148769759
 GameObject:
   m_ObjectHideFlags: 0
