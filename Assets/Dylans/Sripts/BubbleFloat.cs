@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BubbleFloat : MonoBehaviour
 {
-
+    static float t= 0;
+    private bool setDirection = false;
     public UnityEvent OnClick;
+
+    private float directionfloat;
+    public float s = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,24 @@ public class BubbleFloat : MonoBehaviour
     // Update is called once per frame
 
     
-    void FixedUpdate()
+    void Update()
     {
+         t += Time.deltaTime;
+         if(!setDirection){
+            directionfloat = Random.Range(-0.1f, 0.1f);
+            setDirection = true;
+         }
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x + Random.Range(-.2f, .2f),-5f,5f), transform.position.y +0.1f, transform.position.z);
+         if(setDirection){
+             transform.position = new Vector3(Mathf.Clamp(Mathf.Lerp(transform.position.x,transform.position.x+directionfloat, t/1 ),-5f,5f), transform.position.y +(5f*Time.deltaTime), transform.position.z);
+         }  
+
+         if(t>1){
+            setDirection = false;
+            t = 0f;
+         }
+
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x + Random.Range(-.2f, .2f),-5f,5f), transform.position.y +0.1f, transform.position.z);
 
         if(transform.position.y > 20){
             Destroy(gameObject);
