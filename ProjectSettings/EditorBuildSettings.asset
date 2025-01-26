@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 397372274ff21ff40b83a52cc5879ec0
   - enabled: 1
-    path: Assets/Luke/LukeUIScene.unity
-    guid: 7e7b2e2737e0f0c4aa24d4f0e6df327e
+    path: Assets/Scenes/GameScene.unity
+    guid: 4ef06a0b8bc1a0c488c25e74365e8ee9
   m_configObjects: {}

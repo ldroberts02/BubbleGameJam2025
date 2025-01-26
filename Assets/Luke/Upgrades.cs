@@ -46,6 +46,8 @@ public class Upgrades : MonoBehaviour
     public int upgradeEightAmnt = 0;
     public TMP_Text upgradeEightPriceText;
 
+    public GameObject clickerObject;
+
 
     void Start()
     {
@@ -67,6 +69,7 @@ public class Upgrades : MonoBehaviour
                 if (upgradePriceOne < Wallet.instance.bubbles)
                 {
                     Wallet.instance.SubBubbles(upgradePriceOne);
+                    clickerObject.GetComponent<NewClickScript>().bubblesPerClick ++;
                     if (upgradeOne.activeSelf == false)
                     {
                         upgradeOne.SetActive(true);
@@ -246,5 +249,9 @@ public class Upgrades : MonoBehaviour
             default:
                 break;
         }
+    }
+    public void onExit()
+    {
+        Application.Quit();
     }
 }

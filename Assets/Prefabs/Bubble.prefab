@@ -120,6 +120,9 @@ MonoBehaviour:
         m_CallState: 2
   PopupTextPrefab: {fileID: 5744493230484564485, guid: d9d9c7a8550f84b4889275d4a72437c3, type: 3}
   PopupCanvas: {fileID: 0}
+  sounds: []
+  volumeChangeMult: 0.2
+  pitchChangeMult: 0.2
 --- !u!58 &7686912981337141110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +173,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -0.05
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
