@@ -576,6 +576,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1165526105544333261, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 1468680089278350664, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -588,10 +592,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2368431291596594275, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 2678690697720765857, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1437594909}
+    - target: {fileID: 3310557185381816195, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4388841498595048191, guid: c5c911550c4aecc46860558f47b46f50, type: 3}
       propertyPath: clickerObject
       value: 
