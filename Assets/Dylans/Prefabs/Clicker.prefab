@@ -59,6 +59,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b98e45dd8ca9bb4ca58946c63fb657b, type: 3}
   volumeChangeMult: 0.2
   pitchChangeMult: 0.2
+  background: {fileID: 0}
 --- !u!114 &4931947896340464193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +74,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallet: {fileID: 0}
   bubblesPerClick: 1
-  sounds: []
+  sounds:
+  - {fileID: 8300000, guid: 0b85b9e79b8dea84bbfb2b4cbaaabdf9, type: 3}
+  - {fileID: 8300000, guid: 8cc1fda79289c8642927ac85bebb2603, type: 3}
+  - {fileID: 8300000, guid: a5359f8462755584486070a30803ee53, type: 3}
+  - {fileID: 8300000, guid: 957e39f5354f846459d10c9934173ea8, type: 3}
+  - {fileID: 8300000, guid: c912e86dbcde4704f964343a75706194, type: 3}
+  - {fileID: 8300000, guid: 150c85ace32028e4eae4813e0f71b707, type: 3}
+  - {fileID: 8300000, guid: f4639937bdb96cb43b5ece4295eff8c4, type: 3}
+  - {fileID: 8300000, guid: 768641fd36e96eb4ca670583d0540c03, type: 3}
+  - {fileID: 8300000, guid: 22031a57790dcc642a6d335537a3bb5c, type: 3}
+  - {fileID: 8300000, guid: 1b98e45dd8ca9bb4ca58946c63fb657b, type: 3}
   volumeChangeMult: 0.2
   pitchChangeMult: 0.2
   bubbleClickPrefab: {fileID: 7925616433811809618, guid: af6b32c6c851b1f428d55ca9b34620fe, type: 3}
   maxRadius: 1.1
+  background: {fileID: 0}

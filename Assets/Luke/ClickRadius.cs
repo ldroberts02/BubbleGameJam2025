@@ -32,8 +32,9 @@ public class ClickRadius : MonoBehaviour
         }
     }
     
-    void OnTriggerEnter2D(Collider2D other){
-        other.gameObject.GetComponent<BubbleFloat>().Clicked();
+    void OnTriggerEnter2D(Collider2D other)
+    {
+       other.gameObject.GetComponent<BubbleFloat>().Clicked();
        clickScript.ClickBubbleAdd();
     }
 

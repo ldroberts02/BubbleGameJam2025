@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0cfe0704fef06974fbb9b51ae910b0b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,13 +106,13 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 4931947896340464193, guid: 507e7a0426c9a90428ab1e97e9c606f6, type: 3}
+        m_TargetAssemblyTypeName: NewClickScript, Assembly-CSharp
+        m_MethodName: PlayRandomSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -120,6 +120,18 @@ MonoBehaviour:
         m_CallState: 2
   PopupTextPrefab: {fileID: 5744493230484564485, guid: d9d9c7a8550f84b4889275d4a72437c3, type: 3}
   PopupCanvas: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: 0b85b9e79b8dea84bbfb2b4cbaaabdf9, type: 3}
+  - {fileID: 8300000, guid: 8cc1fda79289c8642927ac85bebb2603, type: 3}
+  - {fileID: 8300000, guid: a5359f8462755584486070a30803ee53, type: 3}
+  - {fileID: 8300000, guid: 957e39f5354f846459d10c9934173ea8, type: 3}
+  - {fileID: 8300000, guid: 150c85ace32028e4eae4813e0f71b707, type: 3}
+  - {fileID: 8300000, guid: f4639937bdb96cb43b5ece4295eff8c4, type: 3}
+  - {fileID: 8300000, guid: 768641fd36e96eb4ca670583d0540c03, type: 3}
+  - {fileID: 8300000, guid: 22031a57790dcc642a6d335537a3bb5c, type: 3}
+  - {fileID: 8300000, guid: 1b98e45dd8ca9bb4ca58946c63fb657b, type: 3}
+  volumeChangeMult: 0.2
+  pitchChangeMult: 0.2
 --- !u!58 &7686912981337141110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +182,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -0.4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
