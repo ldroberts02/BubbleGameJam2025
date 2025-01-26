@@ -27,22 +27,22 @@ public class Upgrades : MonoBehaviour
     public TMP_Text upgradeFourPriceText;
 
     public GameObject upgradeFive;
-    public float upgradePriceFive = 10000.0f;
+    public float upgradePriceFive = 50.0f;
     public int upgradeFiveAmnt = 0;
     public TMP_Text upgradeFivePriceText;
 
     public GameObject upgradeSix;
-    public float upgradePriceSix = 10000.0f;
+    public float upgradePriceSix = 500.0f;
     public int upgradeSixAmnt = 0;
     public TMP_Text upgradeSixPriceText;
 
     public GameObject upgradeSeven;
-    public float upgradePriceSeven = 10000.0f;
+    public float upgradePriceSeven = 5000.0f;
     public int upgradeSevenAmnt = 0;
     public TMP_Text upgradeSevenPriceText;
 
     public GameObject upgradeEight;
-    public float upgradePriceEight = 10000.0f;
+    public float upgradePriceEight = 50000.0f;
     public int upgradeEightAmnt = 0;
     public TMP_Text upgradeEightPriceText;
 
@@ -154,6 +154,7 @@ public class Upgrades : MonoBehaviour
                 Debug.Log("Case 4 - Upgrade 5");
                 if (upgradePriceFive < Wallet.instance.bubbles)
                 {
+                    Debug.Log("Test");
                     Wallet.instance.SubBubbles(upgradePriceFive);
                     if (upgradeFive.activeSelf == false)
                     {
