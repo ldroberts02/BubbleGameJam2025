@@ -88,4 +88,6 @@ public class ClickScript : MonoBehaviour
             Debug.LogWarning("No sounds assigned in the sounds array!");
         }
     }
+
+    
 }

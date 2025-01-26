@@ -39,6 +39,7 @@ public class NewClickScript : MonoBehaviour
     [Range(0.1f, 0.5f)] public float volumeChangeMult = 0.2f;
     public float pitchChangeMult = 0.2f;
     public GameObject bubbleClickPrefab;
+    public float maxRadius = 10.1f;
 
     void Start()
     {
@@ -95,5 +96,14 @@ public class NewClickScript : MonoBehaviour
         {
             Debug.LogWarning("No sounds assigned in the array!");
         }
+    }
+
+
+
+    public void ClickBubbleAdd(){
+        wallet.AddBubbles(bubblesPerClick);
+    }
+        public void RadiusUpgrad(){
+        maxRadius = maxRadius * 1.2f;
     }
 }

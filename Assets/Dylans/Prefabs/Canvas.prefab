@@ -618,6 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685814728492572942}
+  - component: {fileID: 1682638300186493}
   m_Layer: 0
   m_Name: UpgradeSeven
   m_TagString: Untagged
@@ -640,6 +641,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3548147467778838088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682638300186493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730492471501977011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b949e00027ff84a877dbb38b559f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToBubbles: 100
 --- !u!1 &2569993718258952616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,6 +1198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947324819131901475}
+  - component: {fileID: 8140299595065823281}
   m_Layer: 0
   m_Name: UpgradeSix
   m_TagString: Untagged
@@ -1206,6 +1221,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3548147467778838088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8140299595065823281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332818467696687650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b949e00027ff84a877dbb38b559f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToBubbles: 10
 --- !u!1 &4198022481881983360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455082219757182091}
+  - component: {fileID: 8311439931994249943}
   m_Layer: 0
   m_Name: UpgradeEight
   m_TagString: Untagged
@@ -1268,6 +1297,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3548147467778838088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8311439931994249943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200241296883239587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b949e00027ff84a877dbb38b559f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToBubbles: 1000
 --- !u!1 &4420136720440286550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6707787753719290625
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2037,19 +2079,19 @@ MonoBehaviour:
   upgradeFourAmnt: 0
   upgradeFourPriceText: {fileID: 7929690622449110569}
   upgradeFive: {fileID: 7534327828202003045}
-  upgradePriceFive: 10000
+  upgradePriceFive: 50
   upgradeFiveAmnt: 0
   upgradeFivePriceText: {fileID: 8004891337033996847}
   upgradeSix: {fileID: 3332818467696687650}
-  upgradePriceSix: 10000
+  upgradePriceSix: 500
   upgradeSixAmnt: 0
   upgradeSixPriceText: {fileID: 5047032756605374887}
   upgradeSeven: {fileID: 1730492471501977011}
-  upgradePriceSeven: 10000
+  upgradePriceSeven: 5000
   upgradeSevenAmnt: 0
   upgradeSevenPriceText: {fileID: 5861628621774061179}
   upgradeEight: {fileID: 4200241296883239587}
-  upgradePriceEight: 10000
+  upgradePriceEight: 50000
   upgradeEightAmnt: 0
   upgradeEightPriceText: {fileID: 1568814145208884465}
 --- !u!1 &6468747792638314633
@@ -2388,6 +2430,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: NewClickScript, Assembly-CSharp
+        m_MethodName: RadiusUpgrad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7278301162205219727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2967944772605758115}
+  - component: {fileID: 3363601564720802213}
   m_Layer: 0
   m_Name: UpgradeFive
   m_TagString: Untagged
@@ -2584,6 +2639,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3548147467778838088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3363601564720802213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534327828202003045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b949e00027ff84a877dbb38b559f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addToBubbles: 1
 --- !u!1 &7682428127726209730
 GameObject:
   m_ObjectHideFlags: 0

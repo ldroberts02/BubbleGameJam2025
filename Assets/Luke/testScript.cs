@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class testScript : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class testScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        testText.text = Wallet.instance.bubbles.ToString();
+        testText.text = Math.Floor(Wallet.instance.bubbles).ToString();
     }
     public void buttonTest()
     {
