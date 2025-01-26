@@ -117,6 +117,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  PopupTextPrefab: {fileID: 5744493230484564485, guid: d9d9c7a8550f84b4889275d4a72437c3, type: 3}
+  PopupCanvas: {fileID: 0}
 --- !u!58 &7686912981337141110
 CircleCollider2D:
   m_ObjectHideFlags: 0

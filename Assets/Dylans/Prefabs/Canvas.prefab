@@ -2079,19 +2079,19 @@ MonoBehaviour:
   upgradeFourAmnt: 0
   upgradeFourPriceText: {fileID: 7929690622449110569}
   upgradeFive: {fileID: 7534327828202003045}
-  upgradePriceFive: 10000
+  upgradePriceFive: 50
   upgradeFiveAmnt: 0
   upgradeFivePriceText: {fileID: 8004891337033996847}
   upgradeSix: {fileID: 3332818467696687650}
-  upgradePriceSix: 10000
+  upgradePriceSix: 500
   upgradeSixAmnt: 0
   upgradeSixPriceText: {fileID: 5047032756605374887}
   upgradeSeven: {fileID: 1730492471501977011}
-  upgradePriceSeven: 10000
+  upgradePriceSeven: 5000
   upgradeSevenAmnt: 0
   upgradeSevenPriceText: {fileID: 5861628621774061179}
   upgradeEight: {fileID: 4200241296883239587}
-  upgradePriceEight: 10000
+  upgradePriceEight: 50000
   upgradeEightAmnt: 0
   upgradeEightPriceText: {fileID: 1568814145208884465}
 --- !u!1 &6468747792638314633
