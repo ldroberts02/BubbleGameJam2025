@@ -8,7 +8,7 @@ using System;
 public class testScript : MonoBehaviour
 {
     public GameObject shopObject;
-    public GameObject textObject;
+    public GameObject creditsObject;
     public TMP_Text testText;
     // Start is called before the first frame update
     void Start()
@@ -46,6 +46,28 @@ public class testScript : MonoBehaviour
         if (shopObject == null)
         {
             Debug.LogError("Shop Null!");
+        }
+    }
+    public void creditsButtonToggle()
+    {
+        if (creditsObject != null)
+        {
+            if (!creditsObject.activeSelf)
+            {
+                Debug.Log("Not Active, Setting active");
+                creditsObject.SetActive(true);
+                return;
+            }
+            else if (creditsObject.activeSelf)
+            {
+                Debug.Log("Active, Setting Not active");
+                creditsObject.SetActive(false);
+                return;
+            }
+        }
+        if (creditsObject == null)
+        {
+            Debug.LogError("Credits Null!");
         }
     }
 }
