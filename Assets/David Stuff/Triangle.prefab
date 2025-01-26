@@ -145,4 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubble: {fileID: 0}
   wallet: {fileID: 0}
+  upgrades: {fileID: 0}
   bubblespopped: 1
+  trianglePrefab: {fileID: 6200497209636722707}
+  offsetDistance: 1

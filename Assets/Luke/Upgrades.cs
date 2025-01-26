@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class Upgrades : MonoBehaviour
 {
+    public List<GameObject> tringale;
+
     public GameObject upgradeOne;
     public float upgradePriceOne = 10.0f;
     public int upgradeOneAmnt = 0;
@@ -163,6 +166,7 @@ public class Upgrades : MonoBehaviour
                     if (upgradeFive.activeSelf == false)
                     {
                         upgradeFive.SetActive(true);
+                        tringale[0].SetActive(true);
                         upgradePriceFive *= 1.2f;
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
@@ -174,6 +178,10 @@ public class Upgrades : MonoBehaviour
                         upgradePriceFive = Mathf.Round(upgradePriceFive);
                         upgradeFiveAmnt++;
                         upgradeFive.GetComponent<AutoClicker>().UpgradeClicker();
+                        if (tringale.Count > upgradeOneAmnt)
+                        {
+                            tringale[upgradeFiveAmnt - 1].SetActive(true);
+                        }
                     }
                     upgradeFivePriceText.text = (upgradePriceFive).ToString();
                 }
