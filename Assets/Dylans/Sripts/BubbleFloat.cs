@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -126,9 +127,11 @@ public class BubbleFloat : MonoBehaviour
     private float t = 0;
     private bool setDirection = false;
     private float directionfloat = 0;
+    private NewClickScript clickScript;
 
     void Start()
     {
+        clickScript = GameObject.Find("Clicker").GetComponent<NewClickScript>();
         // Ensure Canvas is assigned or auto-detected
         if (PopupCanvas == null)
         {
@@ -191,6 +194,7 @@ public class BubbleFloat : MonoBehaviour
         {
             GameObject popup = Instantiate(PopupTextPrefab, PopupCanvas.transform);
             popup.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+            popup.GetComponent<PopUpText>().amount = clickScript.bubblesPerClick;
         }
         else
         {

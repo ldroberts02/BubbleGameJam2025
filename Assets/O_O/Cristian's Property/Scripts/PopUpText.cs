@@ -87,7 +87,15 @@ public class PopUpText : MonoBehaviour
     private Color startColor;
     private float timer;
     private float textAlpha;
+    public int amount;
 
+    private NewClickScript clicker;
+
+    void Start(){
+        clicker = GameObject.Find("Clicker").GetComponent<NewClickScript>();
+        GetComponent<TMP_Text>().text = "+" + amount;
+
+    }
     private void OnEnable()
     {
         clickAmountText = GetComponent<TextMeshProUGUI>();  // Get the TextMeshPro component from the instantiated prefab
@@ -97,29 +105,6 @@ public class PopUpText : MonoBehaviour
 
         timer = 0f;
         textAlpha = 1f;
-    }
-
-    public static PopUpText Create(int amount, GameObject popupTextPrefab, Canvas popupCanvas)
-    {
-        // Spawn the popup text object on the provided canvas
-        GameObject popupObj = Instantiate(popupTextPrefab, popupCanvas.transform);
-        popupObj.transform.position = popupCanvas.transform.position;
-
-        PopUpText bubblePopup = popupObj.GetComponent<PopUpText>();
-        bubblePopup.Init(amount);  // Call Init to set the text of the prefab with the correct amount
-
-        return bubblePopup;
-    }
-
-    // Init method to update the text of the popup
-    public void Init(int amount)
-    {
-        // Dynamically update the text to show the current bubblesPerClick amount
-        clickAmountText.text = "+" + amount.ToString("0");
-
-        // Apply random movement
-        float randomX = Random.Range(-150f, 150f);  // Apply random horizontal movement
-        currentVelocity = new Vector2(randomX, startingVelocity);
     }
 
     private void Update()

@@ -56,7 +56,11 @@ public class ClickScript : MonoBehaviour
                     wallet?.AddBubbles(bubblesPerClick);
 
                     // Show popup text
-                    PopUpText.Create(bubblesPerClick, bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas);
+                    GameObject popupObj = Instantiate(bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas.transform);
+                    popupObj.transform.position = bubbleFloat.PopupCanvas.transform.position;
+
+                    PopUpText bubblePopup = popupObj.GetComponent<PopUpText>();
+                    bubblePopup.amount = bubblesPerClick;
 
                     // Scale the background if assigned
                     if (background != null)

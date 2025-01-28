@@ -188,12 +188,20 @@ public class NewClickScript : MonoBehaviour
             // If the ray hits something
             if (hit.collider != null)
             {
+                Debug.Log("Amount: " + bubblesPerClick);
                 // Check if the clicked object has a BubbleFloat component
                 BubbleFloat bubbleFloat = hit.collider.gameObject.GetComponent<BubbleFloat>();
                 if (bubbleFloat != null)
                 {
                     // Dynamically display the updated `bubblesPerClick`
-                    PopUpText.Create(bubblesPerClick, bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas);
+
+                    GameObject popupObj = Instantiate(bubbleFloat.PopupTextPrefab, bubbleFloat.PopupCanvas.transform);
+                    popupObj.transform.position = bubbleFloat.PopupCanvas.transform.position;
+
+                    PopUpText bubblePopup = popupObj.GetComponent<PopUpText>();
+                    bubblePopup.amount = bubblesPerClick;
+
+                    Debug.Log("Amount: " + bubblesPerClick);
 
                     // Perform the bubble click action
                     bubbleFloat.Clicked();
